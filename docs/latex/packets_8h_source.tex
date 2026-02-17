@@ -1,0 +1,126 @@
+\doxysection{packets.\+h}
+\hypertarget{packets_8h_source}{}\label{packets_8h_source}\index{src/packets.h@{src/packets.h}}
+\mbox{\hyperlink{packets_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ ARTNET\_C\_PACKETS\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ ARTNET\_C\_PACKETS\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <types.h>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtPollFlags}{ArtPollFlags}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structArtPollFlags_a30c5e5c6e0eef7e4731b92bd2f4ac9c7}{send\_on\_change}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structArtPollFlags_ab7c0e09eb8595e2dacd2c2f799f3645d}{send\_diagnostics}};}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structArtPollFlags_a8c14b6b3a69881fc3373f9e3b0ee38f8}{unicast\_diagnostics}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structArtPollFlags_a499a041ccc3b584d859649747ddc51db}{vlc\_disabled}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structArtPollFlags_ad835472c601d30241ca3aeaaad09a56d}{targeted\_mode}};}
+\DoxyCodeLine{00032\ \};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtPoll}{ArtPoll}}\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structArtPoll_a6065e548d7b8453751bbcece0f48816e}{protocol}};}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structArtPollFlags}{ArtPollFlags}}\ \mbox{\hyperlink{structArtPoll_a29f64f350c0834a874395de404e63dff}{flags}};}
+\DoxyCodeLine{00040\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structArtPoll_a5c895f344084b46bd84ea0dec8d8ca75}{diag\_priority}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structPortAddress}{PortAddress}}\ \mbox{\hyperlink{structArtPoll_a1294fbb117f8f497f49f600a3c65c1d6}{top\_address}};}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structPortAddress}{PortAddress}}\ \mbox{\hyperlink{structArtPoll_a6f66197bd8a962073bbc59c340939d7d}{bottom\_address}};}
+\DoxyCodeLine{00046\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structArtPoll_a6d4039c4585ba40cfb4a179f0d56ec9c}{esta\_manufacturer\_code}};}
+\DoxyCodeLine{00048\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structArtPoll_ae05b6f9ecc6828adfd8b303f95a375c4}{oem\_code}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{enum}\ ArtPollReplyIndicatorState\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00053\ \ \ \ \ LOCATING\ =\ 1,}
+\DoxyCodeLine{00054\ \ \ \ \ MUTUED\ =\ 2,}
+\DoxyCodeLine{00055\ \ \ \ \ NORMAL\ =\ 3,}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{enum}\ ArtPollReplyProgrammingAuthority\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ UNKNOWN\ =\ 0,}
+\DoxyCodeLine{00060\ \ \ \ \ FRONTPANEL\ =\ 1,}
+\DoxyCodeLine{00061\ \ \ \ \ NETWORK\ =\ 2,}
+\DoxyCodeLine{00062\ \ \ \ \ UNUSED\ =\ 3,}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtPollReplyStatus1}{ArtPollReplyStatus1}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ ubea\_present;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ rdm\_capable;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ booted\_from\_rom;}
+\DoxyCodeLine{00069\ \ \ \ \ ArtPollReplyIndicatorState\ indicator\_state;}
+\DoxyCodeLine{00070\ \ \ \ \ ArtPollReplyProgrammingAuthority\ programming\_authority;}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{enum}\ ArtPollReplyPortTypes\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ DMX512\ =\ 0,}
+\DoxyCodeLine{00076\ \ \ \ \ MIDI\ =\ 1,}
+\DoxyCodeLine{00077\ \ \ \ \ AVAB\ =\ 2,}
+\DoxyCodeLine{00078\ \ \ \ \ COLORTRAN\ =\ 3,}
+\DoxyCodeLine{00079\ \ \ \ \ ADB\ =\ 4,}
+\DoxyCodeLine{00080\ \ \ \ \ ARTNET\ =\ 5,}
+\DoxyCodeLine{00081\ \ \ \ \ DALI\ =\ 6,}
+\DoxyCodeLine{00082\ \};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtPollReplyPortType}{ArtPollReplyPortType}}\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_input;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_output;}
+\DoxyCodeLine{00087\ \ \ \ \ ArtPollReplyPortTypes\ type;}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGoodInput}{GoodInput}}\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ convert\_to\_sacn;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ recieve\_errors\_detected;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ input\_disabled;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_text;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_sip;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_test;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ recieved\_data;}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structGoodOutput}{GoodOutput}}\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ convert\_from\_sacn;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ merge\_mode\_ltp;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ dmx\_short\_detected;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ merging\_artnet\_data;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_text;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_sip;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ includes\_dmx\_test;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ outputting\_data;}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtPollReply}{ArtPollReply}}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ uint8\_t\ ip\_address[4];}
+\DoxyCodeLine{00113\ \ \ \ \ uint16\_t\ port;}
+\DoxyCodeLine{00114\ \ \ \ \ uint16\_t\ version\_info;}
+\DoxyCodeLine{00115\ \ \ \ \ uint16\_t\ oem\_code;}
+\DoxyCodeLine{00116\ \ \ \ \ uint8\_t\ ubea\_version;}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structArtPollReplyStatus1}{ArtPollReplyStatus1}}\ status1;}
+\DoxyCodeLine{00118\ \ \ \ \ uint16\_t\ esta\_manufacturer\_code;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{char}\ port\_name[17];}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{char}\ long\_name[63];}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{char}\ node\_report[64];}
+\DoxyCodeLine{00122\ \ \ \ \ uint16\_t\ num\_ports;}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{structArtPollReplyPortType}{ArtPollReplyPortType}}\ ports[4];}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{structGoodInput}{GoodInput}}\ good\_input[4];}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{structGoodOutput}{GoodOutput}}\ good\_output[4];}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{structPortAddress}{PortAddress}}\ adresses[4];}
+\DoxyCodeLine{00127\ \ \ \ \ uint8\_t\ acn\_priority;}
+\DoxyCodeLine{00128\ \ \ \ \ uint8\_t\ sw\_macro;}
+\DoxyCodeLine{00129\ \ \ \ \ uint8\_t\ sw\_remote;}
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structArtDmx}{ArtDmx}}\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structArtDmx_a8831d7da185fea6f13f391c04f308f4b}{protocol}};}
+\DoxyCodeLine{00139\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structArtDmx_a509cc46f83562c2a4f5e57cc2393def6}{sequence}};}
+\DoxyCodeLine{00141\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structArtDmx_a525be573a5714123a049378120c2eef1}{physical}};}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{structPortAddress}{PortAddress}}\ \mbox{\hyperlink{structArtDmx_acd4c614e65edd6e797735cef21762ab8}{universe}};}
+\DoxyCodeLine{00145\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structArtDmx_a592254a8f4769a3c908166c4aa30a9d8}{length}};}
+\DoxyCodeLine{00147\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structArtDmx_a235867a2d3697a6dad34cca2c159e389}{data}}[512];}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ARTNET\_C\_PACKETS\_H}}
+
+\end{DoxyCode}

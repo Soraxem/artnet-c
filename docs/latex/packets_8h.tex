@@ -1,0 +1,71 @@
+\doxysection{src/packets.h File Reference}
+\hypertarget{packets_8h}{}\label{packets_8h}\index{src/packets.h@{src/packets.h}}
+
+
+In this file all Artnet packets are defined.  
+
+
+{\ttfamily \#include $<$types.\+h$>$}\newline
+Include dependency graph for packets.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{packets_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structArtPollFlags}{Art\+Poll\+Flags}}
+\item 
+struct \mbox{\hyperlink{structArtPoll}{Art\+Poll}}
+\item 
+struct \mbox{\hyperlink{structArtPollReplyStatus1}{Art\+Poll\+Reply\+Status1}}
+\item 
+struct \mbox{\hyperlink{structArtPollReplyPortType}{Art\+Poll\+Reply\+Port\+Type}}
+\item 
+struct \mbox{\hyperlink{structGoodInput}{Good\+Input}}
+\item 
+struct \mbox{\hyperlink{structGoodOutput}{Good\+Output}}
+\item 
+struct \mbox{\hyperlink{structArtPollReply}{Art\+Poll\+Reply}}
+\item 
+struct \mbox{\hyperlink{structArtDmx}{Art\+Dmx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{packets_8h_a5eff2b1aab3f3c22ce9a96fc0c93a2ea}\label{packets_8h_a5eff2b1aab3f3c22ce9a96fc0c93a2ea} 
+enum {\bfseries Art\+Poll\+Reply\+Indicator\+State} \{ {\bfseries UNKNOWN} = 0
+, {\bfseries LOCATING} = 1
+, {\bfseries MUTUED} = 2
+, {\bfseries NORMAL} = 3
+ \}
+\item 
+\Hypertarget{packets_8h_a1d14897b028720bd5b847fab24b51dd3}\label{packets_8h_a1d14897b028720bd5b847fab24b51dd3} 
+enum {\bfseries Art\+Poll\+Reply\+Programming\+Authority} \{ {\bfseries UNKNOWN} = 0
+, {\bfseries FRONTPANEL} = 1
+, {\bfseries NETWORK} = 2
+, {\bfseries UNUSED} = 3
+ \}
+\item 
+\Hypertarget{packets_8h_aed7ea34808f822a2ccdc6b784b0cf142}\label{packets_8h_aed7ea34808f822a2ccdc6b784b0cf142} 
+enum {\bfseries Art\+Poll\+Reply\+Port\+Types} \{ \newline
+{\bfseries DMX512} = 0
+, {\bfseries MIDI} = 1
+, {\bfseries AVAB} = 2
+, {\bfseries COLORTRAN} = 3
+, \newline
+{\bfseries ADB} = 4
+, {\bfseries ARTNET} = 5
+, {\bfseries DALI} = 6
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+In this file all Artnet packets are defined. 
+
+\begin{DoxyAuthor}{Author}
+Samuel Hafen 
+\end{DoxyAuthor}
