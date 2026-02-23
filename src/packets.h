@@ -18,36 +18,6 @@
 #include <types.h>
 
 
-struct ArtPollFlags {
-    /// Send a poll packet when device settings change
-    bool send_on_change;
-    /// Send diaganostics packets
-    bool send_diagnostics;
-    /// Send diagnostics via unicast
-    bool unicast_diagnostics;
-    /// Disable VLC
-    bool vlc_disabled;
-    /// Enabled targeted mode
-    bool targeted_mode;
-};
-
-struct ArtPoll {
-    /// Protocol revision number of the packet
-    uint16_t protocol;
-    /// Flags of the device
-    ArtPollFlags flags;
-    /// Diagnostic priority
-    uint8_t diag_priority;
-    /// Top PortAddress of polling area
-    PortAddress top_address;
-    /// Bottom PortAddress of polling area
-    PortAddress bottom_address;
-    /// Manufacturer code
-    uint16_t esta_manufacturer_code;
-    /// Oem code
-    uint16_t oem_code;
-};
-
 enum ArtPollReplyIndicatorState {
     UNKNOWN = 0,
     LOCATING = 1,
@@ -127,24 +97,6 @@ struct ArtPollReply {
     uint8_t acn_priority;
     uint8_t sw_macro;
     uint8_t sw_remote;
-};
-
-
-
-
-struct ArtDmx {
-    /// The Artnet protocol revision number
-    uint16_t protocol;
-    /// Incrementing number for sortiung DMX packets
-    uint8_t sequence;
-    /// Physical port number of DMX origin
-    uint8_t physical;
-    /// Address of the ArtDmx packet
-    PortAddress universe;
-    /// Number of DMX data bytes
-    uint16_t length;
-    /// DMX data as bytes
-    uint8_t data[512];
 };
 
 #endif // ARTNET_C_PACKETS_H
