@@ -15,29 +15,32 @@
 
 #define ARTNET_C_PACKETS_H
 
-#include <types.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#include "common.h"
 
 
 enum ArtPollReplyIndicatorState {
-    UNKNOWN = 0,
-    LOCATING = 1,
-    MUTUED = 2,
-    NORMAL = 3,
+    INDICATOR_UNKNOWN = 0,
+    INDICATOR_LOCATING = 1,
+    INDICATOR_MUTUED = 2,
+    INDICATOR_NORMAL = 3,
 };
 
 enum ArtPollReplyProgrammingAuthority {
-    UNKNOWN = 0,
-    FRONTPANEL = 1,
-    NETWORK = 2,
-    UNUSED = 3,
+    PROGRAMMING_UNKNOWN = 0,
+    PROGRAMMING_FRONTPANEL = 1,
+    PROGRAMMING_NETWORK = 2,
+    PROGRAMMING_UNUSED = 3,
 };
 
 struct ArtPollReplyStatus1 {
     bool ubea_present;
     bool rdm_capable;
     bool booted_from_rom;
-    ArtPollReplyIndicatorState indicator_state;
-    ArtPollReplyProgrammingAuthority programming_authority;
+    enum ArtPollReplyIndicatorState indicator_state;
+    enum ArtPollReplyProgrammingAuthority programming_authority;
 };
 
 
@@ -54,7 +57,7 @@ enum ArtPollReplyPortTypes {
 struct ArtPollReplyPortType {
     bool is_input;
     bool is_output;
-    ArtPollReplyPortTypes type;
+    enum ArtPollReplyPortTypes type;
 };
 
 struct GoodInput {
@@ -84,16 +87,16 @@ struct ArtPollReply {
     uint16_t version_info;
     uint16_t oem_code;
     uint8_t ubea_version;
-    ArtPollReplyStatus1 status1;
+    struct ArtPollReplyStatus1 status1;
     uint16_t esta_manufacturer_code;
     char port_name[17];
     char long_name[63];
     char node_report[64];
     uint16_t num_ports;
-    ArtPollReplyPortType ports[4];
-    GoodInput good_input[4];
-    GoodOutput good_output[4];
-    PortAddress adresses[4];
+    struct ArtPollReplyPortType ports[4];
+    struct GoodInput good_input[4];
+    struct GoodOutput good_output[4];
+    struct PortAddress adresses[4];
     uint8_t acn_priority;
     uint8_t sw_macro;
     uint8_t sw_remote;
