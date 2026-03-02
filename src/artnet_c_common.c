@@ -1,7 +1,7 @@
 
-#include "common.h"
+#include "artnet_c_common.h"
 
-const char* artnet_id = "Art-Net";
+const char artnet_id[8] = "Art-Net";
 
 const uint16_t OpPoll = 0x2000;
 const uint16_t OpPollReply = 0x2100;
@@ -20,3 +20,4 @@ struct PortAddress port_address_from_number(uint16_t number) {
         .universe = (uint8_t)number
     };
 };
+

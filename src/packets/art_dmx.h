@@ -5,9 +5,13 @@
 
 #define ARTNET_C_PACKETS_ART_DMX_H
 
+#include "../artnet_c_common.h"
+
+ARTNET_C_BEGIN_DECLS
+
 #include <stdint.h>
 
-#include "../common.h"
+
 
 /// Struct that holds an ArtDmx packet type
 struct ArtDmx {
@@ -30,5 +34,7 @@ void art_dmx_serialize(struct ArtDmx art_dmx, uint8_t *buffer);
 
 /// Parse a ArtDmx packet from a buffer, you need to check beforehand what type of packet the buffer containts!
 void art_dmx_parse(struct ArtDmx *art_dmx, uint8_t *buffer);
+
+ARTNET_C_END_DECLS
 
 #endif // ARTNET_C_PACKETS_ART_DMX_H

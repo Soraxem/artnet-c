@@ -5,10 +5,14 @@
 
 #define ARTNET_C_PACKETS_ART_POLL_REPLY_H
 
+#include "../artnet_c_common.h"
+
+ARTNET_C_BEGIN_DECLS
+
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "../common.h"
+
 
 /// Describes the state of the indicator light on the node
 enum ArtPollReplyIndicatorState {
@@ -113,5 +117,6 @@ struct ArtPollReply {
     uint8_t sw_remote;
 };
 
+ARTNET_C_END_DECLS
 
 #endif // ARTNET_C_PACKETS_ART_POLL_REPLY_H

@@ -5,10 +5,14 @@
 
 #define ARTNET_C_PACKETS_ART_POLL_H
 
+#include "../artnet_c_common.h"
+
+ARTNET_C_BEGIN_DECLS
+
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "../common.h"
+
 
 /// Flags that define the response behavior to this poll request
 struct ArtPollFlags {
@@ -47,5 +51,7 @@ void art_poll_serialize(struct ArtPoll art_poll, uint8_t *buffer);
 
 /// Parse a ArtPoll packet from a buffer
 void art_poll_parse(struct ArtPoll *art_poll, uint8_t *buffer);
+
+ARTNET_C_END_DECLS
 
 #endif // ARTNET_C_PACKETS_ART_POLL_H

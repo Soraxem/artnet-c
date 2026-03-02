@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "art_dmx.h"
-#include "../common.h"
+#include "../artnet_c_common.h"
 
 // Serializes an ArtDmx packet into a buffer for Artnet
 void art_dmx_serialize(struct ArtDmx art_dmx, uint8_t *buffer) {

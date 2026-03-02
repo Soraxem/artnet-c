@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "art_poll.h"
-#include "../common.h"
+#include "../artnet_c_common.h"
 
 
 /// Serializes an ArtPoll packet into a buffer for Artnet
