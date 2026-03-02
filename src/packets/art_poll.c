@@ -1,6 +1,4 @@
 
-#include <stdint.h>
-#include <stdbool.h>
 #include <string.h>
 
 #include "art_poll.h"
